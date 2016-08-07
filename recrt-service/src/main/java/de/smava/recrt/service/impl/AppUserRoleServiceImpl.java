@@ -18,6 +18,7 @@ public class AppUserRoleServiceImpl implements AppUserRoleService {
     @Autowired
     private AppUserRoleRepository repository;
 
+    @Cacheable("users")
     @Override
     @Transactional
     public List<? extends AppUserRole> getByAppUser(AppUser appUser) throws RecrtServiceException {
